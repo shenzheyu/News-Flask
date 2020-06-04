@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="whole">
+        <div id="side">
+            <button id="this_page_button">Google News</button>
+            <br>
+            <button id="other_page_button">Search</button>
+        </div>
+        <div id="body">
+            <div id="input">
+                <form onsubmit="search(this.keyword.value, this.from_date.value, this.to_date.value, this.source.options.item(this.source.selectedIndex).value)" method="get">
+                    <div id="input_first_line">
+                        Keyword <text style="color: red">*</text>
+                        <input id="keyword" style="width: 100px" type="text" name="keyword" onchange="keyword_empty(this, this.value)" required/>
+                        From <text style="color: red">*</text>
+                        <input style="width: 125px" type="date" name="from_date" />
+                        <span class="validity"></span>
+                        To <text style="color: red">*</text>
+                        <input style="width: 125px" type="date" name="to_date" />
+                    </div>
+                    <div id="input_second_line">
+                         Category
+                    <select onchange="load_source(this.value)" name="category">
+                        <option value="all">all</option>
+                        <option value="business">Business</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="general">General</option>
+                        <option value="health">Health</option>
+                        <option value="science">Science</option>
+                        <option value="sports">Sports</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                    Source
+                    <select name="source">
+                        <option value="all">all</option>
+                        <option value="bloomberg">bloomberg</option>
+                        <option value="business-insider">business-insider</option>
+                        <option value="cnbc">cnbc</option>
+                        <option value="fortune">fortune</option>
+                        <option value="the-wall-street-journal">the-wall-street-journal</option>
+                    </select>
+                    </div>
+                    <div id="input_third_line">
+                        <button type="submit">Search</button>
+                        <button type="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <div id="result">
+                <p style="text-align: center; font-size: 80%">No result</p>
+                <div class="result_item" onclick="show_detail(this)">
+                    <div class="img_container">
+                        <img src="https://usatmmajunkie.files.wordpress.com/2019/06/dillon-danis-bellator-222-3.jpg?w=1000&h=576&crop=1">
+                    </div>
+                    <div class="text">
+                        <h6>
+                            Bellator's Dillon Danis says he had seven-hour reconstructive knee surgery
+                        </h6>
+                        <p>
+                            Dillon Danis is on the road to recovery.
+                        </p>
+                    </div>
+                </div>
+                <div class="result_item">
+                    <div class="img_container">
+                        <img src="https://usatmmajunkie.files.wordpress.com/2019/06/dillon-danis-bellator-222-3.jpg?w=1000&h=576&crop=1">
+                    </div>
+                    <div class="text">
+                        <h6>
+                            Bellator's Dillon Danis says he had seven-hour reconstructive knee surgery
+                        </h6>
+                        <p>
+                            Dillon Danis is on the road to recovery.
+                        </p>
+                    </div>
+                </div>
+                <div class="detail_item">
+                    <div class="img_container">
+                        <img src="https://cdn.cnn.com/cnnnext/dam/assets/200220181835-john-lewis-80th-birthday-super-tease.jpg">
+                    </div>
+                    <div class="text">
+                        <h6>
+                            John Lewis marches across Edmund Pettus Bridge to commemorate 64th anniversary of 'Bloody Sunday
+                        </h6>
+                        <p>
+                            <b>Author: </b>Devan Cole and Kevin Conlon, CNN
+                        </p>
+                        <p>
+                            <b>Source: </b>CNN
+                        </p>
+                        <p>
+                            <b>Date: </b>2020-03-08
+                        </p>
+                        <p>
+                            John Lewis, a longtime Democratic representative and beloved civil rights icon, celebrated the 64th anniversary of \"Bloody Sunday\" in Selma, Alabama, on Sunday, paying tribute to a historic voting rights protest he participated in decades before being elected…
+                        </p>
+                        <p>
+                            <a href="https://www.cnn.com/2020/03/08/politics/john-lewis-bloody-sunday-anniversary/index.html">See Original Post</a>
+                        </p>
+                    </div>
+                    <div class="close_button" onclick="close_detail(this)">
+                        &times
+                    </div>
+                </div>
+                <button onclick="show_more()">
+                    Show More
+                </button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
